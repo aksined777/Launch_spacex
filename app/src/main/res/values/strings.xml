@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="server_error">На сервере произошла ошибка</string>
+    <string name="app_error">В приложении произошла ошибка</string>
+</resources>

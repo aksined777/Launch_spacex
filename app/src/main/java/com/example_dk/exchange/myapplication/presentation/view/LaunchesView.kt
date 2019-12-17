@@ -15,4 +15,7 @@ interface LaunchesView : BaseView, ProgressView {
 
     @StateStrategyType(OneExecutionStateStrategy::class)
     fun onDrawMenu(item: MenuItem, toSort: Boolean)
+
+    @StateStrategyType(OneExecutionStateStrategy::class)
+    fun onShowError()
 }

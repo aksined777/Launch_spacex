@@ -10,7 +10,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.koin.core.KoinComponent
 import org.koin.core.inject
-import java.util.*
 
 @InjectViewState
 class LaunchesPresenter : BasePresenter<LaunchesView>(), KoinComponent {
@@ -38,6 +37,7 @@ class LaunchesPresenter : BasePresenter<LaunchesView>(), KoinComponent {
             } catch (e: Throwable) {
                 withContext(Dispatchers.Main) {
                     viewState.onShowProgress(false)
+                    viewState.onShowError()
                     handleError(e)
                 }
             }

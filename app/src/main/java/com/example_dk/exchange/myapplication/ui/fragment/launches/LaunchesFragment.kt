@@ -17,6 +17,7 @@ import com.example_dk.exchange.myapplication.presentation.view.LaunchesView
 import com.example_dk.exchange.myapplication.ui.common.BaseFragment
 import com.example_dk.exchange.myapplication.ui.fragment.launches.LauncherDifferDelegateAdapter
 import com.example_dk.exchange.myapplication.ui.fragment.single.SingleLaunchFragment
+import kotlinx.android.synthetic.main.include_error.*
 import kotlinx.android.synthetic.main.launches_fragment.*
 
 
@@ -82,6 +83,10 @@ class LaunchesFragment : BaseFragment(), LaunchesView {
         } else {
             item.setIcon(R.drawable.ic_arrow_up)
         }
+    }
+
+    override fun onShowError() {
+        errorView.visibility = View.VISIBLE
     }
 
     override fun onShowSortMenu(item: MenuItem, toSort: Boolean, launches: List<Launch>) {

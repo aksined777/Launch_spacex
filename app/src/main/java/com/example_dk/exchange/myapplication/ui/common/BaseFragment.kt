@@ -3,7 +3,8 @@ package com.example_dk.exchange.myapplication.ui.common
 import android.os.Bundle
 import android.view.*
 import com.arellomobile.mvp.MvpAppCompatFragment
-import com.example_dk.exchange.myapplication.extention.showMsg
+import com.example_dk.exchange.myapplication.utlils.extention.showMsg
+import com.example_dk.exchange.myapplication.utlils.extention.showProgress
 import com.example_dk.exchange.myapplication.presentation.view.ErrorView
 import com.example_dk.exchange.myapplication.presentation.view.ProgressView
 
@@ -39,7 +40,7 @@ abstract class BaseFragment : MvpAppCompatFragment(),
     }
 
     override fun onShowProgress(show: Boolean) {
-       // activity?.showProgress(show)
+        activity?.showProgress(show)
     }
 
     override fun onStop() {
@@ -48,7 +49,7 @@ abstract class BaseFragment : MvpAppCompatFragment(),
     }
 
     override fun onStart() {
-    //    activity?.showProgress(false) //onFirstViewAttach call in presenter after start
+        activity?.showProgress(false)
         super.onStart()
     }
 }

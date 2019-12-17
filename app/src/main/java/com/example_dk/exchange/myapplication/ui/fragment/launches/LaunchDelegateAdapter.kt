@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example_dk.exchange.myapplication.R
 import com.example_dk.exchange.myapplication.entity.core.Launch
+import com.example_dk.exchange.myapplication.utlils.extention.load
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_launcher.view.*
 
 
@@ -44,13 +44,15 @@ class LaunchDelegateAdapter(private val clickListener: (launch: Launch) -> Unit)
 
         fun bind(item: Launch) {
             this.item = item
-            Picasso.with(itemView.ivLogo.getContext()).load(item.urlSmallLogo)
-                .placeholder(R.drawable.progress_animation)
-                .fit()
-                .into(itemView.ivLogo)
-            itemView.tvMission.text = item.mission_name
+            itemView.ivLogo.load(item.urlSmallLogo)
+            itemView.tvMission.text = item.missionName
             itemView.tvRocket.text = item.rocketName
             itemView.tvDate.text = item.date
+            if (item.isLaunchSuccess){
+                itemView.cardViewForRecycler.setBackgroundColor(itemView.getContext().getResources().getColor(R.color.colorBackSuccess))
+            } else {
+                itemView.cardViewForRecycler.setBackgroundColor(itemView.getContext().getResources().getColor(R.color.colorBackFail))
+            }
         }
     }
 

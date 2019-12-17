@@ -1,5 +1,6 @@
 package com.example_dk.exchange.myapplication.presentation.presenter
 
+import android.view.MenuItem
 import com.arellomobile.mvp.InjectViewState
 import com.example_dk.exchange.myapplication.entity.core.Launch
 import com.example_dk.exchange.myapplication.model.interactor.LaunchesInteractor
@@ -9,13 +10,13 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.koin.core.KoinComponent
 import org.koin.core.inject
-import kotlin.collections.toList as toList1
+import java.util.*
 
 @InjectViewState
 class LaunchesPresenter : BasePresenter<LaunchesView>(), KoinComponent {
 
     private val launchesInteractor: LaunchesInteractor by inject()
-
+    private var sortLauncher = true
     private var launches: List<Launch>? = null
 
     override fun onFirstViewAttach() {
@@ -45,5 +46,22 @@ class LaunchesPresenter : BasePresenter<LaunchesView>(), KoinComponent {
 
     fun getLaunches() {
         launches?.let { viewState.onShowLaunches(it) }
+    }
+
+
+    fun getStatMenu() = sortLauncher
+
+    fun doSort(item: MenuItem) {
+        sortLauncher = !sortLauncher
+        launches = launches?.reversed()
+        launches?.let{
+            viewState.onShowSortMenu(item, sortLauncher, it)
+        }
+    }
+
+    fun onPrepareOptionsMenu(findItem: MenuItem?) {
+        findItem?.let {
+            viewState.onDrawMenu(it, sortLauncher)
+        }
     }
 }

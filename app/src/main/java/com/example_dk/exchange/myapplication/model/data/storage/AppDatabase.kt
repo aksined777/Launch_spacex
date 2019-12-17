@@ -4,13 +4,14 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example_dk.exchange.myapplication.BuildConfig
 import com.example_dk.exchange.myapplication.entity.core.Launch
 import com.example_dk.exchange.myapplication.model.data.storage.dao.LaunchDao
 
 
 @Database(
     entities = [Launch::class],
-    version = 14,
+    version = BuildConfig.VERSION_CODE,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {

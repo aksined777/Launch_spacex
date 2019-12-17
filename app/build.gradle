@@ -55,6 +55,7 @@ dependencies {
     implementation 'com.hannesdorfmann:adapterdelegates4-pagination:4.2.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha03'
 
     //Room
     implementation "androidx.room:room-runtime:2.2.2"

@@ -34,8 +34,8 @@ class LaunchDTO(
 fun LaunchDTO.toLaunch(): Launch {
     return Launch(
         id = id ?: 0,
-        mission_name = mission_name ?: "",
-        isLaunch_success = isLaunch_success ?: false,
+        missionName = mission_name ?: "",
+        isLaunchSuccess = isLaunch_success ?: false,
         details = details ?: "",
         date = date ?: "",
         rocketName = rocket?.rocketName ?: "",

@@ -1,6 +1,6 @@
 package com.example_dk.exchange.myapplication.model.repository
 
-import com.example_dk.exchange.myapplication.entity.dto.ResponseSuccess
+
 import com.example_dk.exchange.myapplication.entity.dto.ServerErrorDTO
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi

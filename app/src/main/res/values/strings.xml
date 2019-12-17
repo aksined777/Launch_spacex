@@ -1,5 +1,24 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="server_error">На сервере произошла ошибка</string>
-    <string name="app_error">В приложении произошла ошибка</string>
+    <string name="app_name">SpaceX launches</string>
+    <string name="action_settings">Settings</string>
+    <string name="content_description">Image</string>
+    <string name="launchers">SpaceX launches</string>
+    <string name="error">Something went wrong. Try again.</string>
+    <string name="content_description_details">Image Detail</string>
+    <string name="mission_name">Mission name: </string>
+    <string name="rocket">Rocket: </string>
+    <string name="rocket_type">Type: </string>
+    <string name="launch_date">Launch date:</string>
+    <string name="launching_place">Launching place:</string>
+    <string name="result">Result:</string>
+    <string name="spacex_url">SpaceX site</string>
+    <string name="wikipedia_url">Wikipedia</string>
+    <string name="youtube">Youtube</string>
+    <string name="setting">Setting</string>
+    <string name="sort">Sort</string>
+    <string name="offline">offline</string>
+    <string name="server_error">An error occurred on the server</string>
+    <string name="app_error">An error occurred in the application</string>
+    <string name="success">SUCCESS</string>
+    <string name="failure">FAILURE</string>
 </resources>

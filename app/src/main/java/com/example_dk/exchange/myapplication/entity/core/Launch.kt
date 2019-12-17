@@ -8,8 +8,8 @@ import java.io.Serializable
 data class Launch(
     @PrimaryKey
     var id: Int,
-    var mission_name: String,
-    var isLaunch_success: Boolean,
+    var missionName: String,
+    var isLaunchSuccess: Boolean,
     var details: String,
     var date: String,
     var rocketName: String,

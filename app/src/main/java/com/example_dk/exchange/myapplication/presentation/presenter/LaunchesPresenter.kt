@@ -48,9 +48,6 @@ class LaunchesPresenter : BasePresenter<LaunchesView>(), KoinComponent {
         launches?.let { viewState.onShowLaunches(it) }
     }
 
-
-    fun getStatMenu() = sortLauncher
-
     fun doSort(item: MenuItem) {
         sortLauncher = !sortLauncher
         launches = launches?.reversed()

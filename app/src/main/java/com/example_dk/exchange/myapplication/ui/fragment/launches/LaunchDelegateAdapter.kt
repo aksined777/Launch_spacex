@@ -1,5 +1,6 @@
 package com.example_dk.exchange.myapplication.ui.fragment.launches
 
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -48,10 +49,22 @@ class LaunchDelegateAdapter(private val clickListener: (launch: Launch) -> Unit)
             itemView.tvMission.text = item.missionName
             itemView.tvRocket.text = item.rocketName
             itemView.tvDate.text = item.date
-            if (item.isLaunchSuccess){
-                itemView.cardViewForRecycler.setBackgroundColor(itemView.getContext().getResources().getColor(R.color.colorBackSuccess))
-            } else {
-                itemView.cardViewForRecycler.setBackgroundColor(itemView.getContext().getResources().getColor(R.color.colorBackFail))
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (item.isLaunchSuccess) {
+                    itemView.cardViewForRecycler.setBackgroundColor(
+                        itemView.getContext().getResources().getColor(
+                            R.color.colorBackSuccess,
+                            itemView.context.theme
+                        )
+                    )
+                } else {
+                    itemView.cardViewForRecycler.setBackgroundColor(
+                        itemView.getContext().getResources().getColor(
+                            R.color.colorBackFail,
+                            itemView.context.theme
+                        )
+                    )
+                }
             }
         }
     }

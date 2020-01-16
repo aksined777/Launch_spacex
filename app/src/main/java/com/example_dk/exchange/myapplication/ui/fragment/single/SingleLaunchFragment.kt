@@ -1,8 +1,6 @@
 package com.example_dk.exchange.myapplication.ui.fragment.single
 
-import android.content.Context
-import android.content.Intent
-import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import com.example_dk.exchange.myapplication.R
@@ -38,12 +36,19 @@ class SingleLaunchFragment :  BaseFragment(){
         tvLinkWiki.text = launch.urlWiki
         tvLinkYoutube.text = launch.urlVideo
 
-        if(launch.isLaunchSuccess){
-            tvResult.setText(getString(R.string.success))
-            tvResult.setTextColor(getResources().getColor( R.color.colorSuccess))
-        } else{
-            tvResult.setText(getString(R.string.failure))
-            tvResult.setTextColor(getResources().getColor( R.color.colorFail))
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (launch.isLaunchSuccess) {
+                tvResult.setText(getString(R.string.success))
+                tvResult.setTextColor(
+                    getResources().getColor(
+                        R.color.colorSuccess,
+                        activity?.theme
+                    )
+                )
+            } else {
+                tvResult.setText(getString(R.string.failure))
+                tvResult.setTextColor(getResources().getColor(R.color.colorFail, activity?.theme))
+            }
         }
         tvLinkArticle.onClickUrl()
         tvLinkWiki.onClickUrl()

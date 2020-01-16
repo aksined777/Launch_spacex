@@ -17,5 +17,4 @@ class LaunchesRepository(
         database.launchDao().insertLaunches(launches)
     }
 
-
 }

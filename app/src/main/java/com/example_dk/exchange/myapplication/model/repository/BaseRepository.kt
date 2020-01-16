@@ -20,7 +20,9 @@ open class BaseRepository : KoinComponent {
             val stringError = response.errorBody()?.string()
 
             val errorBody = try {
-                serverErrorAdapter.fromJson(stringError)
+                stringError?.let {
+                    serverErrorAdapter.fromJson(it)
+                }
             } catch (e: Throwable) {
                 null
             }
@@ -39,5 +41,5 @@ open class BaseRepository : KoinComponent {
 }
 
 
-class ServerError(val serverMessage: String? = null, val serverAppResIdMessage: Int? = null) :
+class ServerError(val serverMessage: String? = null) :
     RuntimeException()

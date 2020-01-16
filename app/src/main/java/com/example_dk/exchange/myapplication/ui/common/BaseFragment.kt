@@ -43,11 +43,6 @@ abstract class BaseFragment : MvpAppCompatFragment(),
         activity?.showProgress(show)
     }
 
-    override fun onStop() {
-     //   activity?.hideKeyboard()
-        super.onStop()
-    }
-
     override fun onStart() {
         activity?.showProgress(false)
         super.onStart()

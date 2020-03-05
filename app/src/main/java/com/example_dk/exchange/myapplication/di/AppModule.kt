@@ -15,7 +15,6 @@ val appModule = module {
     }
 
     factory {
-        val impl: LaunchesRepositoryImpl = get()
-        LaunchesInteractor(impl)
+        LaunchesInteractor(get() as LaunchesRepositoryImpl )
     }
 }
